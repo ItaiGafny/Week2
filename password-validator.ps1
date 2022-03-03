@@ -48,6 +48,10 @@ function CheckPasswordCapitalLetters($pass)
         return 0
     }
 }
+
+# Password validator: run each test and check the return value.
+# If none fails, return OK and exit with 0, else return 1
+
 $ret = $(CheckPasswordLength($password)) + $(CheckPasswordDigits($password)) +$(CheckPasswordSmallLetters($password))     + $(CheckPasswordCapitalLetters($password))
 
 if ($ret -eq 0){
