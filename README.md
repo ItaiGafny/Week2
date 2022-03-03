@@ -7,4 +7,3 @@ Requirements:
 * Return exit code 0 if it passed the validation and exit code 1 if it didn’t.
 * If a validation failed provide a message explaining why
 * Script can run automatically without the need for human intervention
-"# Week2" 
