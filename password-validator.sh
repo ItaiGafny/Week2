@@ -48,8 +48,20 @@ function password_contains_capital_letters()
 # Password validator: run each test and check the return value.
 # If none fails, return OK and exit with 0, else return 1
 
+
+if [ $# -eq 1 ] 
+then
 # Read password from input
-PASSWORD=$1
+   PASSWORD=$1
+elif  [ $# -eq 2 ] &&  [ "$1" == "-f" ]
+then
+# Read passowrd from file
+      read -r PASSWORD<$2
+else
+   echo -e "${RED}Illegal usage of flags / paramters"
+   exit 1    
+fi
+
 password_length $PASSWORD
 RET_LEN=$?
 password_contains_digits $PASSWORD
